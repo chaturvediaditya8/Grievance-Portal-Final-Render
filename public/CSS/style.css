@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: rgba(243, 173, 184, 0.119); */
+  /* font-family: prague ; */
+}
+/* header section */
+header {
+  background-color: rgb(247 216 221 / 25%);
+}
+.col-md-12 > h1 {
+  background-image: url(/image/cq5dam.web.1800.600.jpeg);
+  background-size: contain;
+  font-size: 95px;
+  font-weight: 900;
+  line-height: 110px;
+  font-family: jaro;
+  background-clip: text;
+  color: transparent;
+}
+/* navbar section */
+.navbar {
+  background: white !important;
+}
+.navlogo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  /* filter:drop-shadow(10px 7px 10px white); */
+  /* mix-blend-mode:multiply; */
+  border: none;
+  border-radius: 100px;
+  margin-left: 15px;
+  transition: 0.2s ease-in;
+  /* padding: 10 0 px; */
+}
+.navlogo:hover {
+  filter: drop-shadow(10px 9px 22px white);
+  /* mix-blend-mode:normal; */
+  transform: scale(1.102);
+}
+.navbar-nav li {
+  margin: 0 9px;
+  font-size: 20px;
+  font-weight: 600;
+  /* transition: 0.2s ease-in; */
+}
+/* underline part */
+.navbar-nav > li > a::before {
+  content: "";
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #f41e1e;
+  transition: all 0.2s;
+}
+.navbar-nav > li > a:hover::before {
+  width: 100%;
+}
+/* underline part */
+.navbar-nav > li > a:hover {
+  color: #f41e1e;
+  text-shadow: 0px 0px 20px white;
+  width: 100%;
+  transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(1.102);
+}
+.navbar-nav > li > a:not(:hover) {
+  /* opacity: 0.3; */
+  color: black !important;
+}
+/* carousel section */
+.slider{
+  max-width: 100%;
+  height: 550px;
+  aspect-ratio: 16/9;
+}
+
+.convention{
+  background: white;
+  border: none;
+  border-radius: 15px;
+  color: red;
+  font-size: 22px;
+  font-weight: 500;
+  width: fit-content;
+  padding: 0 25px;
+  margin-top: -230px;
+  /* margin-left: -100px; */
+  line-height: 35px;
+  position: absolute;
+}
+.content1{
+  font-size: 50px;
+  font-weight: 700;
+  /* margin-left: -100px; */
+  text-align: left;
+  /* margin-top: 40px; */
+  /* position: relative; */
+}
+.des1{
+  font-size: 19px;
+  /* margin-left: -180px; */
+  text-align: left;
+  line-height: 30px;
+  font-weight: 500;
+  color: #f41e1e;
+
+}
+/* footer section */
+footer {
+  background-color: #000;
+  background-image: url(https://jiwaji.edu/wp-content/uploads/2021/09/bg-footer1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.footerlogo {
+  height: 100px;
+  width: 100px;
+  border: none;
+  border-radius: 100px;
+  transition: 0.3s ease-in;
+}
+.footerlogo:hover {
+  transform: scale(1.102);
+}
+.someLink {
+  font-weight: 600;
+  font-size: 27px;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.someLink:hover {
+  transform: scale(1.102);
+  cursor: pointer;
+}
+.footerheading {
+  /* background-image: url(/image/cq5dam.web.1800.600.jpeg); */
+  /* background-size: contain; */
+  font-size: 20.5px;
+  /* margin-left: 5px; */
+  font-weight: 800;
+  color: white;
+  line-height: 50px;
+  /* background-clip: text; */
+  /* color: transparent; */
+  text-transform: uppercase;
+  transition: 0.2s ease-in;
+}
+.footerheading:hover {
+  transform: scale(1.03);
+}
+.footerlink > li > a {
+  font-size: 18px;
+  padding-bottom: 7px;
+  font-weight: 500;
+  color: white!important;
+}
+.footerlink > li > a::before {
+  content: "";
+  position: fixed;
+  bottom: 0px;
+  left: 10px;
+  width: 0;
+  height: 3px;
+  background-color: #f41e1e;
+  transition: all 0.2s;
+}
+.footerlink > li > a:hover::before {
+  width: 30%;
+}
+.footerlink > li > a:hover {
+  color: #f41e1e!important;
+  text-shadow: 0px 0px 20px white;
+  width: 100%;
+  padding-left: 10px;
+  transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(1.102);
+}
+/* .footerlink:not(:hover){
+
+  color: rgb(0, 0, 0);
+} */
+.brandLogo {
+  font-size: 40px;
+  cursor: pointer;
+  padding-left: 37px;
+  transition: 0.3s ease-in;
+}
+.brandLogo > i:hover {
+  transform: scale(1.122);
+}
+.rightFooter > h4 {
+  font-size: 25px;
+  color: white;
+  transition: 0.3s ease-in;
+}
+.rightFooter > h4:hover {
+  transform: scale(1.05);
+}
+.rightFooter > p {
+  margin-left: 95px;
+  color: white;
+  font-size: 20.5px;
+  font-weight: 700;
+  /* color: black; */
+  transition: 0.3s ease-in;
+}
+.rightFooter > p:hover {
+  transform: scale(1.05);
+}
+/* footer ends */
+/* Main section */
+.grimg{
+  transition: .3s ease-in;
+}
+.grimg:hover{
+  transform: scale(1.04)
+}
+h1{
+  transition: .3s ease-in;
+}
+h1:hover{
+  transform: scale(1.04);
+}
+h3{
+  transition: .3s ease-in;
+}
+h3:hover{
+  transform: scale(1.04);
+}
+main{
+  background-color: rgba(243, 173, 184, 0.119);
+  padding-bottom: 50px;
+  margin-top: -25px;
+  padding-top: 40px;
+}
+main>p,li{
+  color: rgb(72, 72, 72);
+}
+main img{
+  transition: .3s ease-in;
+}
+main img:hover{
+  transform: scale(1.04);
+}
+input:hover{
+  box-shadow: -1px 1px 13px 0px #3a3aea;
+}
+textarea:hover{
+  box-shadow: -1px 1px 13px 0px #3a3aea!important;
+}
+@keyframes section {
+  from{
+    opacity: 0;
+    scale: 0.5;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+  
+}
+section{
+  /* transition: 0.3s ; */
+  animation: section linear ;
+  animation-timeline: view() ;
+  animation-range: entry 0 cover 30%;
+}
+.p-3{
+  background-color: rgba(243, 173, 184, 0.119);
+  padding: 50px;
+  border: 2px solid white;
+  transition: 0.3s ease-in;
+  border-radius: 20px;
+}
+.p-3:hover{
+  transform: scale(1.07);
+}
+button{
+  transition: 0.3s ease-in;
+}
+button:hover{
+  transform: scale(1.04);
+}
+.i{
+  transition: 0.3s ease-in;
+}
+.i:hover{
+  transform: scale(1.101);
+}

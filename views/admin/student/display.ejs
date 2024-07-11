@@ -1,0 +1,91 @@
+<%- include("../header.ejs") %> <%- include("../sidebar.ejs") %>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Student Display</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+            <li class="breadcrumb-item active">Student Display</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+     <div class="container-fluid mt-5 ">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <!-- <button
+              type="button"
+              class="btn btn-info"
+              style="float: left"
+              data-toggle="modal"
+              data-target="#modal-default"
+            >
+              Add students
+            </button> -->
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Rollno</th>
+        
+                    <th>Address</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% i=1 %> <% d.forEach((item)=>{ %>
+                  <tr>
+                    <td><%= i++ %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.rollno %></td>
+                    <td><%= item.address %></td>
+        
+                    <td><img src="<%= item.image.url %>" width="50px" alt="" /></td>
+                    <td></td>
+                    <td>
+                      <a href="/admin/Student/view/<%= item.id %>" class="btn btn-info">
+                        <i class="fa-regular fa-eye"></i></a
+                      >
+                      <a href="/admin/Student/edit/<%= item.id %>" class="btn btn-success">
+                        <i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="/admin/Student/Delete/<%= item.id %>" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i></i></a>
+                    </td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+         
+          <center>
+            <a href="/admin/insertuser" class="btn btn-info btn-lg ">Add Student</a>
+            <a href="/admin/dashboard" class="btn btn-info btn-lg">Back To Dashboard</a>
+          </center>
+        </div>
+      </div>
+     </div>
+  </div>
+  <!-- /.content-header -->
+  <!-- </div> -->
+  
+</div>
+
+<%- include("../footer.ejs") %>

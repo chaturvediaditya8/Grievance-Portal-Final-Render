@@ -1,0 +1,327 @@
+<%- include('./StudentHeader.ejs')%>
+<div class="container mt-5">
+  <center>
+    <% if(msg.length>0){%>
+      <div class="alert alert-success m-2 ">
+        <%=msg%>
+      </div>
+
+      <%}%>
+  </center>
+  <center>
+    <% if(error.length>0){%>
+      <div class="alert alert-danger m-2 ">
+        <%=error%>
+      </div>
+
+      <%}%>
+  </center>
+  <div class="row">
+    <!-- left portion start -->
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card widget-card border-light shadow-sm">
+            <div class="card-header text-bg-primary">Welcome, <%= name%> </div>
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <img src="<%= image.url %>" class="img-fluid rounded-circle" alt="Luna John" style="height: 150px; width: 150px;">
+              </div>
+              <h5 class="text-center mb-1"><%=name %></h5>
+              <p class="text-center text-secondary mb-4">Student</p>
+              <a href="/logout" class="btn btn-warning btn-md"><i class="fa-solid fa-power-off" style="color: red;"> </i>
+                Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- inner row1 ends -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="card widget-card border-light shadow-sm">
+            <div class="card-header text-bg-primary">About Me</div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush mb-0">
+                <li class="list-group-item">
+                  <h6 class="mb-1">
+                    <i class="fa-solid fa-envelope text-danger"></i> Email
+                  </h6>
+                  <span><%= email %></span>
+                </li>
+                <li class="list-group-item">
+                  <h6 class="mb-1">
+                    <i class="fa-solid fa-house"></i> Address
+                  </h6>
+                  <span><%= d.address %></span>
+                </li>
+                <li class="list-group-item">
+                  <h6 class="mb-1">
+                    <i class="fa-solid fa-phone-volume"></i> Contact
+                  </h6>
+                  <span><%= d.mobile %></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- inner row 2 ends -->
+    </div>
+    <!-- left portion end-->
+    <!-- right portion start -->
+    <div class="col-md-9">
+      <div class="card widget-card border-light shadow-sm">
+        <div class="card-body">
+          <ul class="nav nav-tabs" id="profileTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="overview-tab" data-bs-toggle="tab"
+                data-bs-target="#overview-tab-pane" type="button" role="tab" aria-controls="overview-tab-pane"
+                aria-selected="true"> Overview </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"> Edit Profile
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="email-tab" data-bs-toggle="tab" data-bs-target="#complain-tab-pane"
+                type="button" role="tab" aria-controls="complain-tab-pane" aria-selected="false"> Register Complain
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#status-tab-pane"
+                type="button" role="tab" aria-controls="status-tab-pane" aria-selected="false"> Complain Status
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#password-tab-pane"
+                type="button" role="tab" aria-controls="password-tab-pane" aria-selected="false"> Change Password
+              </button>
+            </li>
+          </ul>
+          <!-- nav bar ends -->
+          <div class="tab-content" id="profileTabContent">
+            <!-- Content overview start -->
+            <div class="tab-content pt-4" id="profileTabContent">
+              <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel"
+                aria-labelledby="overview-tab" tabindex="0">
+                <h5 class="mt-2 mb-4 ms-2">About</h5>
+                <div class="row g-0">
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Roll number</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%= d.rollno %></div>
+                  </div>
+                  <!-- roll number -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Name</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%= d.name %></div>
+                  </div>
+                  <!-- Name -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Father Name</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%=d. Fname %></div>
+                  </div>
+                  <!-- Father name -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Mother Name</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%= d.Mname%></div>
+                  </div>
+                  <!-- Mother name -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">DOB</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%=d.dob%></div>
+                  </div>
+                  <!-- DOB -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Mobile number</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%=d.mobile %></div>
+                  </div>
+                  <!-- mobile number -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Address</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%=d.address %></div>
+                  </div>
+                  <!-- address -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Category</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%= d.category %></div>
+                  </div>
+                  <!-- Category -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Email</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%= d.email %></div>
+                  </div>
+                  <!-- Email -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Education</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%= d.education%></div>
+                  </div>
+                  <!-- Education -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Course</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%=d.course%></div>
+                  </div>
+                  <!-- Course -->
+                  <div class="col-5 col-md-3 bg-light border-bottom border-white border-3">
+                    <div class="p-2">Semester</div>
+                  </div>
+                  <div class="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
+                    <div class="p-2"><%=d.semester %></div>
+                  </div>
+                </div>
+                <!-- overview inner row -->
+              </div>
+              <!-- Content over view ends -->
+              <!-- Content profile start -->
+              <div class="tab-pane fade " id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                tabindex="0">
+                <h5 class="mt-2 mb-4 ms-2">Update Profile</h5>
+                <form action="/studentdashboard/updateprofile" method="post" enctype="multipart/form-data">
+                  <div class="mb-3">
+                      <label for="">Name</label>
+                      <input type="text" value="<%= name%>" name="name" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                      <label for="">Email</label>
+                      <input type="text" value="<%= email%>" name="email" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                      <label for="">Image</label>
+                      <input type="file"  name="image" class="form-control">
+                      <img src="<%= image.url %>" alt="" class="mt-2" width="80" style="border: 2px solid black;">
+                  </div>
+                  
+                  <button type="submit" class="btn btn-success">Update Profile</button>
+
+              </form>
+                  <!-- col-12 -->
+                </form>
+              </div>
+              <!-- Content profile ends -->
+              <!-- Content complain start -->
+              <div class="tab-pane fade " id="complain-tab-pane" role="tabpanel" aria-labelledby="complain-tab"
+                tabindex="0"> 
+                <h5 class="mt-2 mb-4 ms-2">Register a Complain</h5>
+                <form action="/complain" method="post" enctype="multipart/form-data">
+                  <div class="mb-3">
+                    <input type="hidden" name="user_id" value="<%= d.id%>" id="">
+                    <label for="">Rollno.</label>
+                    <input type="text" name="rollno" value="<%=d.rollno%>" class="form-control" readonly>
+                </div>
+                  <div class="mb-3">
+                    <label for="">Course</label>
+                    <input type="text" name="course" value="<%= d.course%>" class="form-control" readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="">Semester</label>
+                  <input type="text" name="semester" value="<%=d.semester %>" class="form-control" readonly>
+              </div>
+                <div class="mb-3">
+                      <label for="">ComplaintType</label>
+                      <input type="text" name="complaintype" class="form-control">
+                  </div>
+                 <div class="mb-3">
+                      <label for="">ComplaintDetail</label>
+                      <input type="text" name="complaindetail" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                    <label for="">Image</label>
+                    <input type="file" name="image" class="form-control">
+                </div>
+                 <center> <button type="submit" class="btn btn-success">Submit</button></center>
+  
+              </form>
+              </div>
+              <!-- Content complain ends -->
+              <!-- Content status start -->
+              <div class="tab-pane fade " id="status-tab-pane" role="tabpanel" aria-labelledby="status-tab"
+                tabindex="0">
+                <h5>Complain Status</h5>
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      
+                      <th>S.no.</th>
+                     <th>Complaint Type</th>
+                     <th>Complain Detail</th>
+                      <th>Image</th>
+                      <th>status</th>
+                      <th>Comment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <%i=1%> <% c.forEach((item)=>{%>
+                        <td><%= i++%></td>
+                        <td><%= item.complaintype%></td>
+                        <td><%= item.complainDetail%></td>
+                        <td><img src="<%= item.image.url%>" alt="" width="50"></td>
+                        <td><%=item.Status%></td>
+                        <td><%= item.Comment%></td>
+                      </tr>
+                      <%})%>
+                  </tbody>
+                 
+                </table> 
+              
+              </div>
+              <!-- Content status ends -->
+              <!-- Content password start -->
+              <div class="tab-pane fade " id="password-tab-pane" role="tabpanel" aria-labelledby="password-tab"
+                tabindex="0"> 
+                <h5>Change Password</h5>
+                <form action="/studentdashboard/changePassword" method="post">
+                  <div class="mb-3">
+                      <label for="">Old Password</label>
+                      <input type="text" name="op" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                      <label for="">New Password</label>
+                      <input type="password" name="np" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                      <label for="">Confirm Password</label>
+                      <input type="password" name="cp" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-success">Change Password</button>
+
+              </form>
+               </div>
+              <!-- Content password ends -->
+            </div>
+            <!-- tabs content -->
+          </div>
+          <!-- card body -->
+        </div>
+        <!-- card ends -->
+      </div>
+      <!-- col-md-8 -->
+    </div>
+    <!-- row ends -->
+  </div>
+</div>
+  <!-- container ends -->
+
+  <%- include('./StudentFooter.ejs')%>

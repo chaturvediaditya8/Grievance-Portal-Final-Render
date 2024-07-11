@@ -1,0 +1,122 @@
+<%- include('./header.ejs')%> <%- include('./sidebar.ejs')%>
+    <style>
+      .switch-toggle {
+        float: left;
+        background: #242729;
+      }
+
+      .switch-toggle input {
+        position: absolute;
+        opacity: 0;
+      }
+      label {
+        display: inline-block;
+        margin-bottom: 0rem!important;
+      }
+
+      .switch-toggle input+label {
+        padding: 7px;
+        float: left;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .switch-toggle input:checked+label {
+        background: green;
+      }
+      .switch-toggle input:checked+label:nth-last-child(1) {
+        background: Red;
+      }
+     
+    </style>
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Display</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                <li class="breadcrumb-item active">Display</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Complain Data</h3>
+                </div>
+                <div class="card-body">
+                  <table id="example1" class="table table-bordered table Striped">
+                    <thead>
+                      <tr>
+                        <th>Sr.no</th>
+                        <th>ROll no</th>
+                        <th>Complain type</th>
+                        <th>Complain Detail</th>
+                        <th>image</th>
+                        <th>Status</th>
+                        <th>comment</th>
+                        <th>action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% i=1%>
+                        <% c.forEach((item)=>{%>
+                          <tr>
+                            <th>
+                              <%=i++%>
+                            </th>
+                            <th><%= item.rollno%></th>
+                            <th>
+                              <%= item.complaintype%>
+                            </th>
+                            <th>
+                              <%= item.complainDetail%>
+                            </th>
+                            <th><img src="<%= item.image.url%>" width="50px" alt="Complain image"></th>
+                            <th>
+                              <%= item.Status %>
+                            </th>
+                            <th>
+                              <form action="/admin/update_Status/<%= item._id%>" method="post">
+                                <!-- <p><%= item.Comment%></p> -->
+                                <input name="Comment" value="" class="form-control"></textarea>
+                              
+                            </th>
+                            <th>
+                              <button type="submit" name="Status" class="btn btn-success" value="Approved"><i class="fa-solid fa-check"></i></button>
+                              <button type="submit" name="Status" class="btn btn-danger" value="Reject"><i class="fa-solid fa-xmark"></i></button>
+                              <!-- <div class="switch-toggle switch-3 switch-candy">
+                                <input id="" name="Status" type="submit" checked="" />
+                                <label for="" onclick="">Approved</label>
+                                
+                                <input id="" name="Status" type="radio" checked="checked" />
+                                <label for="" class="disabled" onclick="">Pending</label>
+
+                                <input id="" name="Status" type="submit" />
+                                <label for="" onclick="">Reject</label>
+                              </div> -->
+                              </form>
+                              
+                            </th>
+                          </tr>
+                          <%})%>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <%-include('./footer.ejs') %>

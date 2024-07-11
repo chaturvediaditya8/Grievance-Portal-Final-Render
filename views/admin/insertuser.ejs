@@ -1,0 +1,186 @@
+<%- include('./header.ejs') %>
+<%- include('./sidebar.ejs') %>
+<style>
+  input:focus{
+    background-color: none;
+    color: white;
+    border: 1px solid #00afffa3 !important;
+    box-shadow: 0px 0px 8px 0px #00afffa3 !important;
+  }
+  input:hover{
+    background-color: none;
+    color: white;
+    border: 1px solid #00afffa3;
+    box-shadow: 0px 0px 8px 0px #00afffa3;
+  }
+  textarea:focus{
+    background-color: none;
+    color: white;
+    border: 1px solid #00afffa3 !important;
+    box-shadow: 0px 0px 8px 0px #00afffa3 !important;
+  }
+  textarea:hover{
+    background-color: none;
+    color: white;
+    border: 1px solid #00afffa3 !important;
+    box-shadow: 0px 0px 8px 0px #00afffa3 !important;
+  }
+  select:focus{
+    background-color: none;
+    color: white;
+    border: 1px solid #00afffa3 !important;
+    box-shadow: 0px 0px 8px 0px #00afffa3 !important;
+  }
+  select:hover{
+    background-color: none;
+    color: white;
+    border: 1px solid #00afffa3 !important;
+    box-shadow: 0px 0px 8px 0px #00afffa3 !important;
+  }
+  
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+               <!-- Content Header (Page header) -->
+               <section class="content-header">
+                 <div class="container-fluid">
+                   <div class="row mb-2">
+                     <div class="col-sm-6">
+                       <h1>Add Student</h1>
+                     </div>
+                     <div class="col-sm-6">
+                       <ol class="breadcrumb float-sm-right">
+                         <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                         <li class="breadcrumb-item active">Add Student</li>
+                       </ol>
+                     </div>
+                   </div>
+                 </div><!-- /.container-fluid -->
+                 <div class="card mt-4">
+                   <div class="card-header">
+                     <h3 class="card-title">Registration Form</h3>
+                   </div>
+                   <!-- /.card-header -->
+                   <div class="card-body" style="padding: 20 45px;">
+                    <form action="/StudentInsert" method="post" enctype="multipart/form-data">
+                      <div class="row mt-2">
+                        <div class="col-md-6">
+                          <label for="">Roll number</label>
+                          <input type="number" name="rollno" id="" class="form-control">
+                        </div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-md-6">
+                          <label for="">Name</label>
+                          <input type="text" name="name" id="" class="form-control" required> 
+                        </div>
+                        <!-- name -->
+                        <div class="col-md-6">
+                          <label for="">Father name</label>
+                          <input type="text" name="Fname" id="" class="form-control" required>
+                        </div>
+                        <!-- father name -->
+                      </div>
+                      <!-- row1 end -->
+                      <div class="row mt-2">
+                        <div class="col-md-6">
+                          <label for="">Mother name</label>
+                          <input type="text" name="Mname" id="" class="form-control" required>
+                        </div>
+                        <!-- mother name -->
+                        <div class="col-md-3">
+                          <label for="">DOB</label>
+                          <input type="date" name="dob" id="" class="form-control" required>
+                        </div>
+                        <!-- age -->
+                        <div class="col-md-3 ms-3">
+                          <label for="">Gender</label><br>
+                          <input type="radio" name="gender" id="" value="Male" required> Male 
+                          <input type="radio" name="gender" id="" value="Female" required> Female 
+                          <input type="radio" name="gender" id="" value="Other" required> Other  
+                        </div>
+                        <!-- gender -->
+                      </div>
+                      <!-- row2 end -->
+                      <div class="row mt-2">
+                        <div class="col-md-3">
+                          <label for="">Email</label>
+                          <input type="text" name="email" id="" class="form-control" required>
+                        </div>
+                        <!-- Email -->
+                        <div class="col-md-3">
+                          <label for="">Mobile number</label>
+                          <input type="number" name="mobile" id="" class="form-control" required>
+                        </div>
+                        <!-- Mobile number -->
+                        <div class="col-md-3 mt-4">
+                          <label for="">Category</label><br>
+                          <input type="radio" name="category" value="General" id="" required> General
+                          <input type="radio" name="category" value="SC" id="" required> SC 
+                          <input type="radio" name="category" value="ST" id="" required> ST
+                          <input type="radio" name="category" value="OBC" id="" required> OBC
+                        </div>
+                        <div class="col-md-3 mt-4">
+                          <label for="">semester</label>
+                          <select name="semester" id="" class="form-control">
+                            <option value="">Select Semester</option>
+                            <option value="1st Semester">1st Semester</option>
+                            <option value="2nd Semester">2nd Semester</option>
+                            <option value="3rd Semester">3rd Semester</option>
+                            <option value="4th Semester">4th Semester</option>
+                            <option value="5th Semester">5th Semester</option>
+                            <option value="6th Semester">6th Semester</option>
+                            <option value="7th Semester">7th Semester</option>
+                            <option value="8th Semester">8th Semester</option>
+                          </select>
+                        </div>
+                        <!-- Course name -->
+                        </div>
+                        <!-- row3 end -->
+                        <div class="row mt-2">
+                          <div class="col-md-6">
+                            <label for="">Education</label>
+                            <input type="text" name="education" id="" class="form-control" required>
+                          </div>
+                          <!-- Education  -->
+                          <div class="col-md-6">
+                            <label for="">Course</label>
+                            <select name="course" id="" class="form-control">
+                              <option value="">select course</option>
+                              <% course.forEach((course)=>{%>
+                                <option value="<%= course.name %>"><%= course.name %></option>
+
+                                
+                             <% }) %>
+                            </select>
+                          </div>
+                        </div>
+                        <!-- course -->
+                        <!-- row4 ends -->
+                        <div class="row mt-2">
+                          <div class="col-md-6">
+                            <label for="">Address</label>
+                            <textarea name="address" id="" class="form-control"></textarea>
+                          </div>
+                          <!-- Address -->
+                           <div class="col-md-3">
+                            <label for="">Password</label>
+                            <input type="text" name="password" id="" class="form-control">
+                           </div>
+                          <div class="col-md-3">
+                            <label for="">Image</label><br>
+                            <button class="file btn btn-primary">
+                              <input type="file" name="image" id="" >
+                            </button> 
+                          </div>
+                          <!-- Image -->
+                      </div>
+                      <!-- row5 ends -->
+                      <button class="btn btn-lg btn-info mt-3 " type="submit">Submit</button>
+                    </form>
+                   </div>
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<%- include('./footer.ejs') %>

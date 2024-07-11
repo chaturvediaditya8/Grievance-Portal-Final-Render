@@ -1,0 +1,63 @@
+<%- include('./header') %> <%- include('./sidebar') %>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Feedback Display</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item">
+              <a href="/admin/dashboard">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Feedback Display</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>MObile</th>
+                  <th>Address</th>
+                  <th>Feedback</th>
+                  <!-- <th>Reply</th> -->
+                </tr>
+              </thead>
+              <tbody>
+               <tr>
+                   <% i=1%> <% f.forEach((item)=>{%>           
+                              <td><%= i++ %></td>
+                              <td><%= item.name%></td>
+                              <td><%=item.email%></td>
+                              <td><%= item.phone%></td>
+                              <td><%=item.address%></td>
+                              <td><%=item.message%></td>
+                              <!-- <td></td> -->
+               </tr>
+               <%})%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.content-header -->
+</div>
+<!-- content-Wrapper -->
+<%- include('./footer') %>

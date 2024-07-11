@@ -1,0 +1,73 @@
+<%- include ('./header.ejs') %>
+<!-- main start -->
+<main>
+  <section>
+    <div class="container mt-4">
+      <h1 class="text-center text-primary mt-4 mb-4">Contact Us</h1>
+      <p style="text-align: justify; font-size: 17px">
+        Looking for a fair solution to redress you institute grievances? Fill
+        the enquiry form below. Our business team will contact you within a
+        couple of days…
+      </p>
+      <div class="row mt-5">
+        <div class="col-md-7">
+          <div class="card" style="padding: 30px">
+           
+            <div class="row">
+              <form action="/insertFeedback" method="post">
+                <div class="mt-3">
+                  <input type="text" name="name" placeholder="Enter your Name"  id="" class="form-control">
+                </div>
+                <div class="mt-3">
+                  <input type="text" name="mail" placeholder="Email"  id="" class="form-control">
+                </div>
+                <div class="mt-3">
+                  <input type="number" name="phone" placeholder="Phone number"  id="" class="form-control">
+                </div>
+                <div class="mt-3">
+                  <input type="text" name="add" placeholder="Address"  id="" class="form-control">
+                </div>
+                <div class="mt-3">
+                  <textarea name="mesg" id="" placeholder="Write your mesage"class="form-control"cols="30" rows="10"></textarea>
+                </div>
+                <div class="mt-3">
+                  <button class="btn btn-lg" type="submit" style="background-color: rgb(103, 178, 103); color:  white; font-weight: 600;">
+                    Send
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <img src="image/stock-vector--service-concept-open-concept-vector-1284757852.jpg"
+                  alt="" class="w-100" />
+                <h1 class="text-center" style="color: #023480; font-weight: bold"
+                >Support: </h1>
+                <p class="text-center" style="color: #023480; font-size: 20px">
+                  +91 7354712807
+                </p>
+                <div class="row">
+                  <img src="image/Online-grievance-redressal-system.jpg"
+                    class="w-100" alt="" />
+                  <h1 class="text-center mt-3" style="color: #023480">
+                    Address </h1>
+                  <p style="padding: 20px; font-size: 17px">
+                    Sachin Tendulkar Rd, Kailash Nagar, Mahalgaon, Gwalior,
+                    Madhya Pradesh 474001
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- main content -->
+<%- include ('./footer.ejs') %>

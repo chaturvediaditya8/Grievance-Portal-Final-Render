@@ -1,0 +1,195 @@
+<%- include ('./header.ejs') %>
+  <!-- main start -->
+  <main>
+    <section>
+      <div class="container mt-4">
+        <h1 class="text-center text-danger">
+          <span class="text-dark">Why</span> Grievance Redressal System
+          <span class="text-dark">?</span>
+        </h1>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <p style="text-align: justify; font-size: 20px">
+              The Grievance Redressal Cell has been developed to settle the
+              grievances of the students and other stakeholders within a
+              reasonable time period for further strengthening the bond of the
+              students with the institution by providing them with all kind of
+              facilities to a satisfaction level for maintaining a convenient
+              ambience of academic teaching and learning. We believes that
+              providing on time and competent service is essential not only to
+              attract new customers, but also to retain existing ones. Jiwaji
+              University Grievance Portal, the revolutionary online grievance
+              handling mechanism aims at minimising instances of complaints in
+              professional colleges through effective tracking and monitoring of
+              grievances ensuring prompt redressal.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="image/home-grievance-redressal-system-content-img.png" alt="image" class="w-100 grimg" />
+          </div>
+        </div>
+        <div class="row mt-2">
+          <p style="text-align: justify; font-size: 20px">
+            This portal for online registration and disposal of grievances help
+            users obtain immediate response and resolution to their grievances
+            from the institution itself
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <!-- student -->
+          <div class="col-md-4" style="
+            background: rgba(243, 173, 184, 0.119);
+            padding: 20px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+          ">
+            <div class="card text-center p-3">
+              <i class="fa-solid fa-user text-center i" style="font-size: 80px; color: white"></i>
+              <h1 class="text-center mt-2">STUDENT</h1>
+              <p class="text-center">
+                Students can manage and view their Grievance here...
+              </p>
+              <button class="btn" type="submit" style="
+                background-color: rgb(103, 178, 103);
+                color: white;
+                font-weight: 600;
+              " data-bs-toggle="modal" data-bs-target="#student">
+                Login
+              </button>
+            </div>
+          </div>
+          <!-- Dean Hod -->
+          <div class="col-md-4" style="background: rgba(243, 173, 184, 0.119); padding: 20px">
+            <div class="card text-center p-3">
+              <i class="fa-solid fa-user-tie i" style="font-size: 80px; color: white"></i>
+              <h1 class="text-center mt-2">DEAN / HOD</h1>
+              <p class="text-center">
+                This Section is Managed By the Dean/Hod's of Jiwaji University...
+              </p>
+              <button class="btn" type="submit" style="
+                background-color: rgb(103, 178, 103);
+                color: white;
+                font-weight: 600;
+              " data-bs-toggle="modal" data-bs-target="#dean">
+                Login
+              </button>
+            </div>
+          </div>
+          <!-- Admin -->
+          <div class="col-md-4" style="
+            background: rgba(243, 173, 184, 0.119);
+            padding: 20px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+          ">
+            <div class="card text-center p-3">
+              <i class="fa-solid fa-user-gear i" style="font-size: 80px; color: white"></i>
+              <h1 class="text-center mt-2">ADMIN</h1>
+              <p class="text-center">
+                This Section is managed and view by the Grievance handler...
+              </p>
+              <button class="btn" type="submit" style="
+                background-color: rgb(103, 178, 103);
+                color: white;
+                font-weight: 600;
+              " data-bs-toggle="modal" data-bs-target="#admin">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Login Modals -->
+    <!-- Student modal -->
+    <div class="modal fade" id="student" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Student Login</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="/student/VerifyLogin" method="post">
+              <div class="mt-2 mb-2">
+                <!-- <label for="">Username: </label> -->
+                <input type="text" name="email" id="" placeholder="Enter your Email" class="form-control">
+              </div>
+              <div class="mt-2 mb-2">
+                <input type="password" name="password" id="" placeholder="Enter your Password" class="form-control">
+              </div>
+              <button class="btn btn-primary mt-3" type="submit" style="
+          background-color: rgb(103, 178, 103);
+          color: white;
+          font-weight: 600;
+        ">Login</button>
+            </form>
+            <a href="">Forgot Password</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Dean modal -->
+    <div class="modal fade" id="dean" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="" method="post">
+              <div class="mt-2 mb-2">
+                <input type="text" name="deaname" placeholder="Enter your name" id="" class="form-control">
+              </div>
+              <div class="mt-2 mb-2">
+                <input type="password" name="deanpass" placeholder="Enter your password" id="" class="form-control">
+              </div>
+              <button type="button" class="btn mt-3" style="
+        background-color: rgb(103, 178, 103);
+        color: white;
+        font-weight: 600;
+      ">Login</button>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Admin modal -->
+    <div class="modal fade" id="admin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Admin Login</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="/admin/verifyLogin" method="post">
+              <div class="mt-2 mb-2">
+                <input type="text" class="form-control" name="email" id="" placeholder="Enter your email">
+              </div>
+              <div class="mt-2 mb-2">
+                <input type="password" name="password" id="" class="form-control" placeholder="Enter your password">
+              </div>
+              <button type="submit" class="btn mt-3" style="
+      background-color: rgb(103, 178, 103);
+      color: white;
+      font-weight: 600;
+    ">Login</button>
+              <!-- <a href="admin/register" class="btn btn-infoy7"> Register Now</a> -->
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- <br><br><br> -->
+  <!-- main content -->
+  <%- include ('./footer.ejs') %>

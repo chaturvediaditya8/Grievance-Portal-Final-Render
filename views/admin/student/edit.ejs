@@ -1,0 +1,148 @@
+<%- include("../header.ejs") %>
+<%- include("../sidebar.ejs") %>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Student Edit</h1>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                        <li class="breadcrumb-item active">Student Edit</li>
+                    </ol>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+         <div class="container-fluid mt-5">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="text-center">Student Edit Form</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        
+                        <div class="container">
+                            <form action="/admin/StudentUpdate/<%= d.id %>" method="post" enctype="multipart/form-data">
+                         
+                            <div class="form-group">
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                      <label for="">Roll number</label>
+                                      <input type="number" name="rollno" id="" class="form-control" value="<%=d.rollno %>">
+                                    </div>
+                                  </div>
+                                  <div class="row mt-2">
+                                    <div class="col-md-6">
+                                      <label for="">Name</label>
+                                      <input type="text" name="name" id="" class="form-control" required value="<%=d.name %>"> 
+                                    </div>
+                                    <!-- name -->
+                                    <div class="col-md-6">
+                                      <label for="">Father name</label>
+                                      <input type="text" name="Fname" id="" class="form-control" required value="<%= d.Fname %>">
+                                    </div>
+                                    <!-- father name -->
+                                  </div>
+                                  <!-- row1 end -->
+                                  <div class="row mt-2">
+                                    <div class="col-md-6">
+                                      <label for="">Mother name</label>
+                                      <input type="text" name="Mname" id="" class="form-control" required value="<%= d.Mname%>">
+                                    </div>
+                                    <!-- mother name -->
+                                    <div class="col-md-3">
+                                      <label for="">DOB</label>
+                                      <input type="date" name="dob" id="" class="form-control" required value="<%= d.dob%>">
+                                    </div>
+                                    <!-- age -->
+                                    <div class="col-md-3 ms-3">
+                                        <label for="">Gender</label>
+                                      <input type="text" name="gender" id="" class="form-control" required value="<%=d.gender %>">
+                                    </div>
+                                    <!-- gender -->
+                                  </div>
+                                  <!-- row2 end -->
+                                  <div class="row mt-2">
+                                    <div class="col-md-3">
+                                      <label for="">Email</label>
+                                      <input type="text" name="email" id="" class="form-control" required value="<%= d.email%>">
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="col-md-3">
+                                      <label for="">Mobile number</label>
+                                      <input type="number" name="mobile" id="" class="form-control" required value="<%=d.mobile %>">
+                                    </div>
+                                    <!-- Mobile number -->
+                                    <div class="col-md-6 mt-4">
+                                      <label for="">Category</label><br>
+                                      <input type="text" name="category" id="" class="form-control" required value="<%=d.category %>">
+                                    </div>
+                                    <!-- Course name -->
+                                    </div>
+                                    <!-- row3 end -->
+                                    <div class="row mt-2">
+                                      <div class="col-md-6">
+                                        <label for="">Education</label>
+                                        <input type="text" name="education" id="" class="form-control" required value="<%= d.education%>">
+                                      </div>
+                                      <!-- Education  -->
+                                      <div class="col-md-6">
+                                        <label for="">Course</label>
+                                        <input type="text" name="course" id="" class="form-control" value="<%=d.course %>">
+                                      </div>
+                                    </div>
+                                    <!-- course -->
+                                    <!-- row4 ends -->
+                                    <div class="row mt-2">
+                                      <div class="col-md-6">
+                                        <label for="">Address</label>
+                                        <input type="text" name="address" id="" class="form-control" required value="<%=d.address %>">
+                                      </div>
+                                      <!-- Address -->
+                                     
+                                      <div class="col-md-3">
+                                        <label for="">Image</label><br>
+                                        <button class="file btn btn-primary">
+                                          <input type="file" name="image" id="" >
+                                        </button> 
+                                      </div>
+                                      <!-- Image -->
+                                  </div>
+                                  <!-- row5 ends -->
+                                  <button class="btn btn-lg btn-info mt-3 " type="submit">Submit</button>
+                              
+                            </div> 
+                          </form>
+        
+                        </div>
+                        <br />
+                        <center>
+                            <a href="/admin/StudentDisplay" class="btn btn-primary">Back</a>
+                        </center>
+                        <br />
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            </div>
+          </div>
+         </div>
+    </div>
+    <!-- /.content-header -->
+    <!-- </div> -->
+   
+</div>
+<!-- /.content-wrapper -->
+
+<%- include("../footer.ejs") %>
